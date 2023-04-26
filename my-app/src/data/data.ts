@@ -1,7 +1,6 @@
 export interface Data {
   id: number,
   date: string,
-  time: string,
   terminal: 'B' | 'C' | 'D' | 'E' | 'F',
   departure_city: string,
   arrival_city: string,
@@ -12,8 +11,7 @@ export interface Data {
 export const DataArrivals: Data[] = [
   {
     id: 1,
-    date: new Date('2023-04-21 9:00').toDateString(),
-    time: new Date('2023-04-21 9:00').toTimeString(),
+    date: new Date('2023-04-21 9:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Sochi',
     arrival_city: 'Moscow',
@@ -22,8 +20,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 2,
-    date: new Date('2023-04-25 10:00').toDateString(),
-    time: new Date('2023-04-25 10:00').toTimeString(),
+    date: new Date('2023-04-25 10:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Ufa',
     arrival_city: 'Moscow',
@@ -32,8 +29,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 3,
-    date: new Date('2023-04-24 11:00').toDateString(),
-    time: new Date('2023-04-24 11:00').toTimeString(),
+    date: new Date('2023-04-24 11:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Krasnodar',
     arrival_city: 'Moscow',
@@ -42,8 +38,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 4,
-    date: new Date('2023-04-26 12:00').toDateString(),
-    time: new Date('2023-04-26 12:00').toTimeString(),
+    date: new Date('2023-04-26 12:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Vladivostok',
     arrival_city: 'Moscow',
@@ -52,8 +47,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 5,
-    date: new Date('2023-04-25 13:00').toDateString(),
-    time: new Date('2023-04-25 13:00').toTimeString(),
+    date: new Date('2023-04-25 13:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Kazan',
     arrival_city: 'Moscow',
@@ -62,8 +56,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 6,
-    date: new Date('2023-04-24 14:00').toDateString(),
-    time: new Date('2023-04-24 14:00').toTimeString(),
+    date: new Date('2023-04-24 14:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Saratov',
     arrival_city: 'Moscow',
@@ -72,8 +65,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 7,
-    date: new Date('2023-04-26 15:00').toDateString(),
-    time: new Date('2023-04-26 15:00').toTimeString(),
+    date: new Date('2023-04-26 15:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Samara',
     arrival_city: 'Moscow',
@@ -82,8 +74,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 8,
-    date: new Date('2023-04-25 16:00').toDateString(),
-    time: new Date('2023-04-25 16:00').toTimeString(),
+    date: new Date('2023-04-25 16:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Istanbul',
     arrival_city: 'Moscow',
@@ -92,8 +83,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 9,
-    date: new Date('2023-04-24 17:00').toDateString(),
-    time: new Date('2023-04-24 17:00').toTimeString(),
+    date: new Date('2023-04-24 17:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Saint-Petersburg',
     arrival_city: 'Moscow',
@@ -102,8 +92,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 10,
-    date: new Date('2023-04-26 18:00').toDateString(),
-    time: new Date('2023-04-26 18:00').toTimeString(),
+    date: new Date('2023-04-26 18:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Habarovsk',
     arrival_city: 'Moscow',
@@ -112,8 +101,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 11,
-    date: new Date('2023-04-25 19:00').toDateString(),
-    time: new Date('2023-04-25 19:00').toTimeString(),
+    date: new Date('2023-04-25 19:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Volgograd',
     arrival_city: 'Moscow',
@@ -122,8 +110,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 12,
-    date: new Date('2023-04-24 20:00').toDateString(),
-    time: new Date('2023-04-24 20:00').toTimeString(),
+    date: new Date('2023-04-24 20:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Perm',
     arrival_city: 'Moscow',
@@ -132,8 +119,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 13,
-    date: new Date('2023-04-26 21:00').toDateString(),
-    time: new Date('2023-04-26 21:00').toTimeString(),
+    date: new Date('2023-04-26 21:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Erevan',
     arrival_city: 'Moscow',
@@ -142,8 +128,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 14,
-    date: new Date('2023-04-25 22:00').toDateString(),
-    time: new Date('2023-04-25 22:00').toTimeString(),
+    date: new Date('2023-04-25 22:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Kaliningrad',
     arrival_city: 'Moscow',
@@ -152,8 +137,7 @@ export const DataArrivals: Data[] = [
   },
   {
     id: 15,
-    date: new Date('2023-04-24 23:00').toDateString(),
-    time: new Date('2023-04-24 23:00').toTimeString(),
+    date: new Date('2023-04-24 23:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Dubai',
     arrival_city: 'Moscow',
@@ -166,88 +150,79 @@ export const DataArrivals: Data[] = [
 export const DataDepartures: Data[] = [
   {
     id: 1,
-    date: new Date('2023-04-24 9:00').toDateString(),
-    time: new Date('2023-04-24 9:00').toTimeString(),
+    date: new Date('2023-04-24 9:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Moscow',
-    arrival_city: 'Sochi',
+    arrival_city: 'Beijing',
     flight: 'DP 4668',
     company: 'Pobeda'
   },
   {
     id: 2,
-    date: new Date('2023-04-25 10:00').toDateString(),
-    time: new Date('2023-04-25 10:00').toTimeString(),
+    date: new Date('2023-04-25 10:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Moscow',
-    arrival_city: 'Ufa',
+    arrival_city: 'Vienna',
     flight: 'FL 1224',
     company: 'Ural Airlines'
   },
   {
     id: 3,
-    date: new Date('2023-04-26 11:00').toDateString(),
-    time: new Date('2023-04-26 11:00').toTimeString(),
+    date: new Date('2023-04-26 11:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Moscow',
-    arrival_city: 'Krasnodar',
+    arrival_city: 'Abu-Dabhi',
     flight: 'SU 1131',
     company: 'Aeroflot'
   },
   {
     id: 4,
-    date: new Date('2023-04-24 12:00').toDateString(),
-    time: new Date('2023-04-24 12:00').toTimeString(),
+    date: new Date('2023-04-24 12:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Moscow',
-    arrival_city: 'Vladivostok',
+    arrival_city: 'Istanbul',
     flight: 'SU 9982',
     company: 'Rossiya'
   },
   {
     id: 5,
-    date: new Date('2023-04-25 13:00').toDateString(),
-    time: new Date('2023-04-25 13:00').toTimeString(),
+    date: new Date('2023-04-25 13:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Moscow',
-    arrival_city: 'Kazan',
+    arrival_city: 'Alma-aty',
     flight: 'FV 1670',
     company: 'S7 Airlines'
   },
   {
     id: 6,
-    date: new Date('2023-04-26 14:00').toDateString(),
-    time: new Date('2023-04-26 14:00').toTimeString(),
+    date: new Date('2023-04-26 14:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Moscow',
-    arrival_city: 'Saratov',
+    arrival_city: 'Astana',
     flight: 'SU 1303',
     company: 'Aeroflot'
   },
   {
     id: 7,
-    date: new Date('2023-04-24 15:00').toDateString(),
-    time: new Date('2023-04-24 15:00').toTimeString(),
+    date: new Date('2023-04-24 15:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Moscow',
-    arrival_city: 'Samara',
+    arrival_city: 'New York',
     flight: 'SU 1215',
     company: 'S7 Airlines'
   },
   {
     id: 8,
-    date: new Date('2023-04-25 16:00').toDateString(),
-    time: new Date('2023-04-25 16:00').toTimeString(),
+    date: new Date('2023-04-25 16:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Moscow',
-    arrival_city: 'Istanbul',
+    arrival_city: 'Tel-Aviv',
     flight: 'SU 2115',
     company: 'Rossiya'
   },
   {
     id: 9,
-    date: new Date('2023-04-26 17:00').toDateString(),
-    time: new Date('2023-04-26 17:00').toTimeString(),
+    date: new Date('2023-04-26 17:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Moscow',
     arrival_city: 'Saint-Petersburg',
@@ -256,8 +231,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 10,
-    date: new Date('2023-04-24 18:00').toDateString(),
-    time: new Date('2023-04-24 18:00').toTimeString(),
+    date: new Date('2023-04-24 18:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Moscow',
     arrival_city: 'Habarovsk',
@@ -266,8 +240,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 11,
-    date: new Date('2023-04-25 19:00').toDateString(),
-    time: new Date('2023-04-25 19:00').toTimeString(),
+    date: new Date('2023-04-25 19:00').toLocaleString(),
     terminal: 'B',
     departure_city: 'Moscow',
     arrival_city: 'Volgograd',
@@ -276,8 +249,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 12,
-    date: new Date('2023-04-26 20:00').toDateString(),
-    time: new Date('2023-04-26 20:00').toTimeString(),
+    date: new Date('2023-04-26 20:00').toLocaleString(),
     terminal: 'C',
     departure_city: 'Moscow',
     arrival_city: 'Perm',
@@ -286,8 +258,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 13,
-    date: new Date('2023-04-24 21:00').toDateString(),
-    time: new Date('2023-04-24 21:00').toTimeString(),
+    date: new Date('2023-04-24 21:00').toLocaleString(),
     terminal: 'D',
     departure_city: 'Moscow',
     arrival_city: 'Erevan',
@@ -296,8 +267,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 14,
-    date: new Date('2023-04-25 22:00').toDateString(),
-    time: new Date('2023-04-25 22:00').toTimeString(),
+    date: new Date('2023-04-25 22:00').toLocaleString(),
     terminal: 'E',
     departure_city: 'Moscow',
     arrival_city: 'Kaliningrad',
@@ -306,8 +276,7 @@ export const DataDepartures: Data[] = [
   },
   {
     id: 15,
-    date: new Date('2023-04-26 23:00').toDateString(),
-    time: new Date('2023-04-26 23:00').toTimeString(),
+    date: new Date('2023-04-26 23:00').toLocaleString(),
     terminal: 'F',
     departure_city: 'Moscow',
     arrival_city: 'Dubai',

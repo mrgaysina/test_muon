@@ -1,12 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import tumblerSlice from './tumblerSlice';
-import optionSlice from './optionSlice';
+import pickerSlice from './pickerSlice';
 
 
 export const store = configureStore({
   reducer: {
     tumbler: tumblerSlice,
-    options: optionSlice,
+    picker: pickerSlice,
   },
 });
 

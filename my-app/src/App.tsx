@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Wrapper } from './styles/App.styles';
-import Tumbler from './components/Tumbler';
-import List from './components/List';
-import DataPicker from './components/DataPicker';
-import Input from './components/Input';
-import { DataArrivals, DataDepartures } from './data/data';
+import { Wrapper, Filter } from './App.styles';
+import Tumbler from './components/Tumbler/Tumbler';
+import List from './components/List/List';
+import Picker from './components/Picker/Picker';
+import Input from './components/Input/Input';
+
 
 
 
@@ -14,11 +14,11 @@ const App: React.FC = () => {
   return (
     <Wrapper>
       <Tumbler />
-      <div>
+      <Filter>
         <Input />
-        <DataPicker />
-      </div>
-      <List/>
+        <Picker />
+      </Filter>
+      <List />
     </Wrapper>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { TumblerContainer, TumblerButton } from '../styles/Tumbler.styles';
-import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { changeToArrivals, changeToDepartures } from '../app/tumblerSlice';
+import { TumblerContainer, TumblerButton } from './Tumbler.styles';
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { changeToArrivals, changeToDepartures } from '../../app/tumblerSlice';
 
 
 const Tumbler: React.FC = () => {

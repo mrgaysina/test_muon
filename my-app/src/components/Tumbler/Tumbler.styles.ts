@@ -15,6 +15,7 @@ export const TumblerButton = styled.button<Props>`
   width: 50%;
   background: ${(props) => props.active ? ' #4056A1' : '#747474'};
   border: 1px solid ${(props) => props.active ? ' #4056A1' : '#747474'};
+  border-radius: 2px;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
