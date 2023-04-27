@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { DataArrivals, DataDepartures, Data } from '../../data/data';
 import { Select, SelectWrapper } from './Picker.styles';
-import { allArrivals, allDepartures } from '../../app/pickerSlice'
+import { allArrivals, allDepartures, filterData, setDateFilter, setTimeFromFilter, setTimeToFilter, setTerminalFilter } from '../../app/pickerSlice'
 
 
 const Picker: React.FC = () => {
 
+  // select options arraies
+
   const [dateOption, setDateOption] = useState<string[]>([]);
   const [timeOption, setTimeOption] = useState<string[]>([]);
   const [terminalOption, setTerminalOption] = useState<string[]>([]);
+
+  // select's states
+  const [valueDate, setValueDate] = useState<string | null>(null);
   const [valueTime1, setValueTime1] = useState<string | null>(null);
   const [valueTime2, setValueTime2] = useState<string | null>(null);
-  const [valueDate, setValueDate] = useState<string | null>(null);
   const [valueTerminal, setValueTerminal] = useState<string | null>(null);
 
   const arrivals: boolean = useAppSelector(state => state.tumbler.arrivals);
@@ -34,6 +38,7 @@ const Picker: React.FC = () => {
   }, [arrivals])
 
 
+  // create select options arraies
 
   function options(data: Data[]): void {
     let dateResult = data.reduce((acc: string[], el: Data) => (acc.includes(el.date.slice(0,10))) ? acc : [...acc, el.date.slice(0,10)], [])
@@ -47,20 +52,30 @@ const Picker: React.FC = () => {
     setTimeOption(timeResult);
   }
 
+  // handlers for selects
+
   const handleTime1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValueTime1(e.target.value);
+    dispatch(setTimeFromFilter(e.target.value));
+    dispatch(filterData(arrivals));
   }
 
   const handleTime2 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValueTime2(e.target.value);
+    dispatch(setTimeToFilter(e.target.value));
+    dispatch(filterData(arrivals));
   }
 
   const handleDate = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValueDate(e.target.value);
+    dispatch(setDateFilter(e.target.value));
+    dispatch(filterData(arrivals));
   }
 
   const handleTerminal = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValueTerminal(e.target.value);
+    dispatch(setTerminalFilter(e.target.value));
+    dispatch(filterData(arrivals));
   }
 
 
@@ -68,11 +83,11 @@ const Picker: React.FC = () => {
   return (
     <SelectWrapper>
     <Select onChange={handleDate} value={valueDate || ''}>
-    <option value="">Select date</option>
-    {dateOption.map((option) => (
-        <option key={option} value={option}>{option}</option>
-      ))
-    }
+      <option value="">Select date</option>
+      {dateOption.map((option) => (
+          <option key={option} value={option}>{option}</option>
+        ))
+      }
     </Select>
     <Select onChange={handleTime1} value={valueTime1 || ''}>
         <option value="">Select time</option>

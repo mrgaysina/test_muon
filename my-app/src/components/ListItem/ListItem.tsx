@@ -1,7 +1,7 @@
 import React from 'react';
 import { Data } from '../../data/data';
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { ListItemWrapper, ListItemTime, ListItemFlight, ListItemCity } from './ListItem.styles'
+import { useAppSelector } from '../../app/hooks';
+import { ListItemWrapper, ListItemTime, ListItemFlight, ListItemCity, ListItemTerminal } from './ListItem.styles'
 
 type ListItemProps = {
   value: Data
@@ -20,6 +20,7 @@ const ListItem: React.FC<ListItemProps> = ({value}) => {
         <div>{value.company}</div>
         <div>{value.flight}</div>
       </ListItemFlight>
+      <ListItemTerminal>{value.terminal}</ListItemTerminal>
     </ListItemWrapper>
   )
 }

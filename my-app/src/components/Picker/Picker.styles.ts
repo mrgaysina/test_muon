@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
-interface Props {
-  active: boolean;
-}
-
 export const Select = styled.select`
-appearance: none;
+  appearance: none;
   background-color: #ffffff;
   border: 1.5px solid #4056A1;
   border-radius: 4px;
@@ -24,7 +20,9 @@ appearance: none;
   }
 
   @media (max-width: 500px) {
-    flex-basis: 40%;
+    font-size: 6px;
+    border: 0.5px solid #4056A1;
+    padding: 2px 4px;
   }
   
 `
@@ -32,11 +30,17 @@ appearance: none;
 export const SelectWrapper = styled.div`
   display: flex;
   gap: 2px;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     width: 95%;
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 2px;
+  }
+
+  @media (max-width: 500px) {
+    justify-content: center;
+    flex-wrap: nowrap;
   }
 `

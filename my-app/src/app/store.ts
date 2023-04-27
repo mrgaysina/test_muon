@@ -6,7 +6,7 @@ import pickerSlice from './pickerSlice';
 export const store = configureStore({
   reducer: {
     tumbler: tumblerSlice,
-    picker: pickerSlice,
+    picker: pickerSlice
   },
 });
 
