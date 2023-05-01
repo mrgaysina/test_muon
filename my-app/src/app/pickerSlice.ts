@@ -10,7 +10,8 @@ type DataState = {
     date: string,
     timeFrom: string,
     timeTo: string,
-    terminal: string
+    terminal: string,
+    inputSearch: string
   },
 }
 
@@ -22,7 +23,8 @@ const initialState: DataState = {
     date: '',
     timeFrom: '',
     timeTo: '',
-    terminal: ''
+    terminal: '',
+    inputSearch: ''
   }
 }
 
@@ -61,6 +63,11 @@ const pickerSlice = createSlice({
         filteredData = filteredData.filter((arrival) => arrival.terminal === activeFilters.terminal);
       }
 
+      // Фильтрация по поиску
+      if (activeFilters.inputSearch) {
+        filteredData = filteredData.filter((item) => item.arrival_city.toLowerCase().includes(activeFilters.inputSearch.toLowerCase()) || item.departure_city.toLowerCase().includes(activeFilters.inputSearch.toLowerCase()) || item.company.toLowerCase().includes(activeFilters.inputSearch.toLowerCase()) || item.flight.toLowerCase().includes(activeFilters.inputSearch.toLowerCase()));
+      }
+
       state.filteredData = filteredData;
     },
     setDateFilter: (state, action): void => {
@@ -75,28 +82,21 @@ const pickerSlice = createSlice({
     setTerminalFilter: (state, action): void => {
       state.activeFilters.terminal = action.payload;
     },
+    setInputFilter: (state, action): void => {
+      state.activeFilters.inputSearch = action.payload;
+    },
     clearFilters: (state): void => {
       state.activeFilters = {
         date: '',
         timeFrom: '',
         timeTo: '',
-        terminal: ''
+        terminal: '',
+        inputSearch: ''
       };
-    },
-    search: (state, action): void => {
-      const { filteredData, dataArrivals, dataDepartures, activeFilters } = state;
-      const { data, arrival } = action.payload;
-      
-      let searchData: Data[] = filteredData.length > 0 && Object.values(activeFilters).every(item => item !== '') ? filteredData : arrival ? dataArrivals : dataDepartures;
-
-
-      searchData = searchData.filter((item) => item.arrival_city.toLowerCase().includes(data.toLowerCase()) || item.departure_city.toLowerCase().includes(data.toLowerCase()) || item.company.toLowerCase().includes(data.toLowerCase()) || item.flight.toLowerCase().includes(data.toLowerCase()));
-    
-      state.filteredData = data.length !== 0 ? searchData : arrival ? dataArrivals : dataDepartures;
-    } 
+    }
   }
 })
 
-export const {allArrivals, allDepartures, filterData, setDateFilter, setTimeFromFilter, setTimeToFilter, setTerminalFilter, clearFilters, search} = pickerSlice.actions;
+export const {allArrivals, allDepartures, filterData, setDateFilter, setTimeFromFilter, setTimeToFilter, setTerminalFilter, setInputFilter, clearFilters} = pickerSlice.actions;
 
 export default pickerSlice.reducer;

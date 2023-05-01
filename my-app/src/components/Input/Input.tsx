@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SearchInputContainer, SearchIcon, CustomInput, Button } from './Input.styles'
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { search } from '../../app/pickerSlice';
+import { setInputFilter, filterData } from '../../app/pickerSlice';
 
 
 
@@ -9,7 +9,7 @@ const Input: React.FC = () => {
 
   const [inputValue, setInputValue] = useState<string>('');
 
-  const arrival: boolean = useAppSelector(state => state.tumbler.arrivals);
+  const arrivals: boolean = useAppSelector(state => state.tumbler.arrivals);
 
   const dispatch = useAppDispatch();
 
@@ -20,11 +20,16 @@ const Input: React.FC = () => {
   const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.code) {
       case 'Enter':
-        dispatch(search({data: inputValue, arrival}))
+        dispatch(setInputFilter(inputValue));
+        dispatch(filterData(arrivals));
+
         break;
       case 'Backspace':
         if (inputValue.length === 1) {
           cancelSearchHandle()
+          dispatch(setInputFilter(''))
+        dispatch(filterData(arrivals));
+
         }
         break;
       default:
@@ -34,12 +39,14 @@ const Input: React.FC = () => {
   }
 
   const searchHandle = () => {
-    dispatch(search({data: inputValue, arrival}))
+    dispatch(setInputFilter(inputValue));
+    dispatch(filterData(arrivals));
   }
 
   const cancelSearchHandle = () => {
-    dispatch(search({data: '', arrival}));
     setInputValue('');
+    dispatch(setInputFilter(''))
+    dispatch(filterData(arrivals));
   }
 
   return(
